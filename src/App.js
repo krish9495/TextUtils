@@ -25,7 +25,7 @@ function App() {
     if (mode === 'light') {
       setMode('dark');
       showAlert('DARK MODE HAS BEEN ENABLED', 'success');
-      document.body.style.backgroundColor = '#47566b';
+      document.body.style.backgroundColor = '#23344d';
     } else {
       setMode('light');
       showAlert('LIGHT MODE HAS BEEN ENABLED', 'success');
@@ -39,8 +39,8 @@ function App() {
       <div className="container my-3">
         <Alert alert={alert} />
         <Routes>
-          <Route path="/about" element={<About />} />
-          <Route path="/" element={<Textform showAlert={showAlert} heading="Enter your text to Analyze" />} />
+          <Route path="/about" element={<About mode={mode} />} />
+          <Route path="/" element={<Textform showAlert={showAlert} mode={mode} heading="Enter your text to Analyze" />} />
         </Routes>
       </div>
     </>
